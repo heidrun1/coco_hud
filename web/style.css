@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap');
+
+body {
+    font-family: 'Inter';
+}
+
+.kierunek {
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items: center;
+    background-color: #2C292E;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 6px;
+    display: flex;
+    height: 40px;
+}
+
+.hud {
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+}
+
+.kierunek p {
+    margin-left: 5px;
+    font-size: 16px;
+    color: #C1C1C3;
+}
+
+
+
+
+.hud {
+    display: flex;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+}
+
+.status {
+    margin-left: 15px;
+    width: 330px;
+    background-color: #2C292E;
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.status i {
+    color: #C1C1C3;
+    font-size: 18px;
+}
+
+.fuelstatus {
+    margin-right: 10px;
+    width: 40px;
+    height: 40px;
+    background-color: #2C292E;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+}
+
+.fuelstatus i {
+    color: #C1C1C3;
+}
+
+
+
+#mikroactive {
+    background: linear-gradient(to top, #0073ad 0%, #0073ad 80%, #C1C1C3 8%, #C1C1C3 100%);
+    -webkit-background-clip: text;
+    color: transparent;
+
+    /* text-shadow: 0px 0px 5px rgba(255, 255, 255, 1); */
+}

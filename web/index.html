@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>coco_carhud rework by heidrun</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/497af507ff.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://kit.fontawesome.com/fa8cd2a9f4.css" crossorigin="anonymous">
+</head>
+<body>
+    
+    <div class="hud">
+        <div class="kierunek">
+            <i class="fa-regular fa-compass" style="color: #C1C1C3; margin-right: 5px;"></i>
+            <p id="kierunek">NORTH</p>
+        </div>
+
+        <div class="status">
+            <i id="kamza" class="fa-regular fa-shield"></i>
+            <i id="zycie" class="fa-regular fa-heart"></i>
+            <i id="jedzenie" class="fa-sharp fa-solid fa-burger-lettuce"></i>
+            <i id="woda" class="fa-regular fa-droplet"></i>
+            <i id="zmeczenie" class="fa-regular fa-bolt"></i>
+            <i id="voice" class="fa-regular fa-microphone"></i>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script>
+        function updateStatus(jaki, ile) {
+            $("#" + jaki).css("background","linear-gradient(to top, #0073ad 0%, #0073ad " + ile + ", #C1C1C3 8%, #C1C1C3 100%)");
+            $("#" + jaki).css("-webkit-background-clip","text");
+            $("#" + jaki).css("color","transparent");
+        }
+
+        window.addEventListener('message', (event) => {
+    const data = event.data
+    switch (data.action) {
+        case "update":
+            $("#kierunek").text(data.kierunek)
+            updateStatus("kamza", data.kamza + "%")
+            updateStatus("voice", data.voice + "%")
+            updateStatus("zycie", data.zycie + "%")
+            updateStatus("jedzenie", data.jedzenie + "%")
+            updateStatus("woda", data.woda + "%")
+            updateStatus("zmeczenie", data.zmeczenie + "%")
+            break;
+        default:
+            break;
+    }
+});
+        </script>
+</body>
+</html>
